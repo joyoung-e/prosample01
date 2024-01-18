@@ -2,10 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:@200;400;700;&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;&display=swap");
 
+html {
+  font-size: 16px;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.blind {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
 }
 ul {
   list-style: none;
@@ -16,7 +24,7 @@ a {
 }
 
 .row {
-  max-width: 1267px; /* 중요!!! */
+  max-width: 1289px; /* 중요!!! */
   /* border: 1px solid white; 확인용 보더*/
   margin: 0 auto;
 }
@@ -34,7 +42,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 #header {
-  background-color: rgba(0, 0, 0, 0.47);
+  background: rgba(0, 0, 0, 0.47);
   position: fixed;
   top: 0;
   left: 0;
@@ -44,6 +52,17 @@ body {
 #header h1 {
   float: left;
   padding: 20px 0;
+}
+#header h1 a {
+  width: 226px;
+  height: 50px;
+  display: block;
+  background: url(../image/홈페이지\ 로고2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#header .menuopen {
+  display: none;
 }
 #header #nav {
   float: right;
@@ -78,6 +97,7 @@ body {
   width: 200px;
   background: #fff;
   display: none;
+  border-top: 3px solid #45639d;
 }
 #header #nav .depth2 > li > a {
   display: block;
@@ -163,7 +183,7 @@ body {
   text-align: center;
 }
 #section .slide .text h2 {
-  font-size: 100px;
+  font-size: 5vw;
   opacity: 0;
   transform: translate3d(0, 100%, 0);
 }
@@ -175,6 +195,8 @@ body {
   margin: 30px 0 80px;
   opacity: 0;
   transform: translate3d(0, 100%, 0);
+  word-break: keep-all;
+  /* 한글 단어 잘림 허용 안하는 속성 */
 }
 #section .slick-current.slick-active.slide .text p {
   animation: fadeInUp 1s 1 both 1.3s;
